@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    color:white;
+    font-family: "Poppins";
+
+}
+
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-image: url("../images/blue.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
