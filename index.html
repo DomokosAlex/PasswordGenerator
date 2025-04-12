@@ -16,34 +16,44 @@
 
 </head>
 
-<body id="body">
+<body class="body  d-flex justify-content-center align-items-center">
 
     <div id="overlay"></div>
+    <div id="darkoverlay"></div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <header>
-                <button onclick="red()">1</button>
-                <button onclick="blue()">2</button>
-                <button onclick="green()">3</button>
-            </header>
-        </div>
-        <div class="row">
-            <main>
-                <div class="col-2">p</div>
-                <div class="col-8">p</div>
-                <div class="col-2">p</div>
-            </main>
-        </div>
-        <div class="row">
-            <footer>
-                p
-            </footer>
-        </div>
+    <div class="container">
+        <form>
+        <header class="row text-center">
+
+            <h1><span class="border-bottom border-5 border-dark">Password Generator</span></h1>
+
+            <div class="row mt-3">
+                <div class="col-sm-12 col-md-4">
+                    <h2>Háttérszín:</h2><input type="color" id="Color">
+
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <h2>Sötétités:</h2> <input type="range" id="Sot" min="0" max="10" >
+
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <h2>Elmosódás:</h2> <input type="range" id="Elmos" min="0" max="25">
+
+                </div>
+            </div>
+        </header>
+        <main class="row text-center mt-4">
+            <div>
+                <input type="text" class="kodtarto" readonly>
+
+            </div>
+        </main>
+    </form>
     </div>
 
-
-<script src="js/back.js"></script>
+    <script src="js/back.js"></script>
 
 </body>
 
