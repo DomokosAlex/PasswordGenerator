@@ -16,41 +16,56 @@
 
 </head>
 
-<body class="body  d-flex justify-content-center align-items-center">
+<body class="d-flex justify-content-center align-items-center flex-column" id="bod">
 
     <div id="overlay"></div>
     <div id="darkoverlay"></div>
-
-    <div class="container mx-4 text-center">
+    <div class="container my-5 text-center">
+        
         <form>
-        <header class="row text-center d-flex justify-content-center align-items-center">
+            <header class="row text-center d-flex justify-content-center align-items-center">
 
-            <h1><span class="border-bottom border-5 border-dark">Password Generator</span></h1>
+                <h1><span class="border-bottom border-5 border-dark">Password Generator</span></h1>
 
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    <h2 class="mt-3">Háttérszín:</h2><input type="color" id="Color">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <h2 class="mt-3">Háttérszín:</h2><input type="color" id="Color">
 
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <h2 class="mt-3">Sötétités:</h2> <input type="range" id="Sot" min="0" max="10">
+
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <h2 class="mt-3">Elmosódás:</h2> <input type="range" id="Elmos" min="0" max="25">
+
+                    </div>
                 </div>
 
-                <div class="col-sm-12 col-md-4">
-                    <h2 class="mt-3">Sötétités:</h2> <input type="range" id="Sot" min="0" max="10" >
+                <main class="row mt-5">
+                    <input type="text" readonly>
 
-                </div>
+                    <input type="checkbox" id="nagy">
+                    <input type="checkbox" id="kis">
+                    <input type="checkbox" id="szam">
+                    <input type="checkbox" id="spec">
+                    <button class="btn btn-primary" id="general">hal</button>
+                </main>
 
-                <div class="col-sm-12 col-md-4">
-                    <h2 class="mt-3">Elmosódás:</h2> <input type="range" id="Elmos" min="0" max="25">
 
-                </div>
-            </div>
-        </header>
-        <main class="row text-center mt-4">
-            <div>
-                <input type="text" class="kodtarto" readonly>
 
-            </div>
-        </main>
-    </form>
+
+            </header>
+           
+        </form>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <footer>
+            p
+        </footer>
     </div>
 
     <script src="js/back.js"></script>
