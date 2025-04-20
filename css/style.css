@@ -8,8 +8,7 @@
 
 }
 
-html,
-body {
+html, body {
 
     height: 100%;
     width: 100%;
@@ -59,4 +58,9 @@ body {
 
 #Color {
     width: 33%;
+}
+
+input[type="text"] {
+    color: black;
+    width:40%;
 }
