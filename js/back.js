@@ -47,58 +47,38 @@ function RandomCharacter(set) {
 
 }
 
-
 function PasswordGen(check) {
 
   const pass = [];
-  const mandatory = [];
+  const necessary_sets = [];
 
-  //stores checks
+
   const checks = [nagybetuk.checked, kisbetuk.checked, szamok.checked, specialkarakter.checked];
-
-  //count how many are checked
-  var count = 0;
-
   const sets = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()_+[]{}"];
 
-  checks.forEach(e => {
-    if (e) {
-      count++
-    }
-  });
 
-  var category_counter = 0;
-
-  checks.forEach(e => {
-
-    if (e) {
-
-      for (let i = 0; i < passlen.value; i++) {
-        pass.push(RandomCharacter(sets[category_counter]));
-      }
-      if (check) {
-        mandatory.push(RandomCharacter(sets[category_counter]));
-
-      }
-      
-
-    }
-
-    category_counter++
-
-  });
-  const beforecheck = Shuffle(pass).slice(0, pass.length / count);
-
-  //if there are mandatory characters, add them
-  if (check) {
-    for (let i = 0; i < mandatory.length; i++) {
-      beforecheck[i] = mandatory[i];
-
+  for (let i = 0; i < checks.length; i++) {
+    if (checks[i]) {
+      necessary_sets.push(sets[i]);
     }
   }
 
-  //shuffle again because of new characters, turn to string and return
-  return Shuffle(beforecheck).join("");
+
+  if (check) {
+    necessary_sets.forEach(e => {
+      pass.push(RandomCharacter(e));
+    });
+
+  }
+
+  while (pass.length < parseInt(passlen.value)) {
+
+    var random_cat = Math.floor(Math.random() * necessary_sets.length);
+    pass.push(RandomCharacter(necessary_sets[random_cat]));
+
+  }
+
+  return Shuffle(pass).join("");
 
 }
 
