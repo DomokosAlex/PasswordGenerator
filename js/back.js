@@ -80,7 +80,7 @@ function PasswordGen(check) {
         mandatory.push(RandomCharacter(sets[category_counter]));
 
       }
-      remains = passlen.length - pass.length;
+      
 
     }
 
