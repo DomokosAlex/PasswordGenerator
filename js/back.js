@@ -67,7 +67,6 @@ function PasswordGen(check) {
     }
   });
 
-  //if that category is checked it will be as an index, which character set to use
   var category_counter = 0;
 
   checks.forEach(e => {
