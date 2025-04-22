@@ -1,66 +1,77 @@
 * {
     margin: 0;
     padding: 0;
-    color: white;
     font-family: "Poppins";
     box-sizing: border-box;
 
-
 }
 
-html, body {
-
+html,
+body {
     height: 100%;
     width: 100%;
-
-    background-attachment: fixed;
     background-image: url("../images/gray.svg");
-    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 
 
-}
-
-
-.container {
-    position: relative;
-
-    border: 3px solid black;
-    border-radius: 10px;
-    padding: 5px;
-
-}
-
-.container-fluid {
-    position: relative;
 
 }
 
 #overlay {
 
-    position: fixed;
-    inset: 0;
+    width: 100%;
+    height: 100%;
 
-    background-color: rgb(0, 90, 160);
     transition: background-color 0.7s linear;
+    background-color: rgb(0, 90, 170);
+    backdrop-filter: blur(7px);
     mix-blend-mode: overlay;
-    backdrop-filter: blur(2px);
-
-
+    position: fixed;
+    overflow-y: auto;
 }
 
 #darkoverlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
     transition: background-color 0.7s linear;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    overflow-y: auto;
 }
 
-#Color {
-    width: 33%;
+.container {
+    position: relative;
+    top: 15px;
+
+
 }
 
-input[type="text"] {
-    color: black;
-    width:40%;
+.checksize {
+    transform: scale(1.5);
+}
+
+#passlen{
+    width: 50%;
+  transform: scale(2);
+}
+
+#value{
+    min-width:35%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    
+}
+a:hover{
+    color:gray;
+
+}
+footer{
+    margin-top: 160px;
 }

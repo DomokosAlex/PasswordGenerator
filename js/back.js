@@ -7,7 +7,7 @@ const min1 = document.getElementById("min1");
 
 //passlength
 const passlen = document.getElementById("passlen");
-
+const numvalue = document.getElementById("value");
 //hova irja ki
 var kiir = document.getElementById("kiir");
 
@@ -15,6 +15,13 @@ var kiir = document.getElementById("kiir");
 const gomb = document.getElementById("general");
 
 
+
+passlen.addEventListener("input", function(){
+  numvalue.value = passlen.value;
+})
+numvalue.addEventListener("input", function(){
+   passlen.value = numvalue.value;
+})
 //keverje fel a karaktereket, given an array it mixes the characters
 function Shuffle(pass_slice) {
 
@@ -89,7 +96,7 @@ gomb.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (!nagybetuk.checked && !kisbetuk.checked && !szamok.checked && !specialkarakter.checked) {
-    kiir.value = "Select 1 category at minimum";
+    kiir.value = "1 category minimum";
   } else {
     //Password is given to the form element 
     kiir.value = PasswordGen(min1.checked);
