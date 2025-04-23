@@ -10,7 +10,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-image: url("../images/gray.svg");
+    background-image: url("../images/bg.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

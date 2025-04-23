@@ -91,9 +91,6 @@ function Translate(lang) {
             e.innerHTML = text[lang][tx];
         }
 
-        
-
-
     })
 
 
