@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', 'Inter',  sans-serif;
+    font-family: 'Poppins', 'Inter', sans-serif;
     box-sizing: border-box;
 
 }
@@ -53,25 +53,31 @@ body {
     transform: scale(1.5);
 }
 
-#passlen{
+#passlen {
     width: 50%;
-  transform: scale(2);
+    transform: scale(2);
 }
 
-#value{
-    min-width:35%;
+#value {
+    min-width: 35%;
     text-align: center;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
-    
-}
-a:hover{
-    color:gray;
 
 }
-footer{
+
+a:hover {
+    color: gray;
+
+}
+
+footer {
     margin-top: 160px;
+}
+
+#copyicon {
+    font-size: 35px;
 }

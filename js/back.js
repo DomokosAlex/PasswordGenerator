@@ -14,13 +14,13 @@ var kiir = document.getElementById("kiir");
 //generaljon
 const gomb = document.getElementById("general");
 
+const copy = document.getElementById("copy");
 
-
-passlen.addEventListener("input", function(){
+passlen.addEventListener("input", function () {
   numvalue.value = passlen.value;
 })
-numvalue.addEventListener("input", function(){
-   passlen.value = numvalue.value;
+numvalue.addEventListener("input", function () {
+  passlen.value = numvalue.value;
 })
 //keverje fel a karaktereket, given an array it mixes the characters
 function Shuffle(pass_slice) {
@@ -100,15 +100,18 @@ gomb.addEventListener("click", function (e) {
   } else {
     //Password is given to the form element 
     kiir.value = PasswordGen(min1.checked);
-    nagybetuk.style.backgroundColor = "white";
-
   }
 
 
 });
 
+copy.addEventListener("click", function () {
 
+  kiir.select();
 
+  navigator.clipboard.writeText(kiir.value);
+
+});
 
 
 
