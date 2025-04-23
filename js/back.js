@@ -96,14 +96,18 @@ gomb.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (!nagybetuk.checked && !kisbetuk.checked && !szamok.checked && !specialkarakter.checked) {
-    kiir.value = "1 category minimum";
+    nagybetuk.checked = true;
   } else {
     //Password is given to the form element 
     kiir.value = PasswordGen(min1.checked);
+    nagybetuk.style.backgroundColor = "white";
+
   }
 
 
 });
+
+
 
 
 
