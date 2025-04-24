@@ -69,8 +69,6 @@ function PasswordGen(check) {
   const checks = [nagybetuk.checked, kisbetuk.checked, szamok.checked, specialkarakter.checked];
   const sets = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()_+[]{}"];
 
-  var strength = 0;
-
   for (let i = 0; i < checks.length; i++) {
     if (checks[i]) {
       necessary_sets.push(sets[i]);
@@ -94,6 +92,16 @@ function PasswordGen(check) {
 
   const finalpass = Shuffle(pass).join("")
 
+  Update_Strength(finalpass, check);
+
+  return finalpass;
+
+}
+
+function Update_Strength(finalpass, check){
+
+  var strength = 0;
+  
   if (finalpass.length > numvalue.min) {
     strength += (finalpass.length - numvalue.min)/ 2;
   }
@@ -143,10 +151,8 @@ function PasswordGen(check) {
 
   }
   
-  return finalpass;
 
 }
-
 
 gomb.addEventListener("click", function (e) {
 
