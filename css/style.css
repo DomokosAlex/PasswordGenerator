@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0; 
     padding: 0;
     font-family: 'Poppins', 'Inter', sans-serif;
     box-sizing: border-box;
@@ -51,11 +51,14 @@ body {
 
 .checksize {
     transform: scale(1.5);
+
 }
 
 #passlen {
     width: 50%;
     transform: scale(2);
+    padding: 0;
+
 }
 
 #value {
@@ -80,4 +83,9 @@ footer {
 
 #copyicon {
     font-size: 35px;
+}
+
+
+.progress{
+    padding: 0;
 }

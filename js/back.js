@@ -16,12 +16,17 @@ const gomb = document.getElementById("general");
 
 const copy = document.getElementById("copy");
 
+const bar = document.getElementById("strengthbar");
+
+
 passlen.addEventListener("input", function () {
   numvalue.value = passlen.value;
 })
 numvalue.addEventListener("input", function () {
   passlen.value = numvalue.value;
 })
+
+
 //keverje fel a karaktereket, given an array it mixes the characters
 function Shuffle(pass_slice) {
 
@@ -56,6 +61,7 @@ function RandomCharacter(set) {
 
 function PasswordGen(check) {
 
+
   const pass = [];
   const necessary_sets = [];
 
@@ -63,6 +69,7 @@ function PasswordGen(check) {
   const checks = [nagybetuk.checked, kisbetuk.checked, szamok.checked, specialkarakter.checked];
   const sets = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()_+[]{}"];
 
+  var strength = 0;
 
   for (let i = 0; i < checks.length; i++) {
     if (checks[i]) {
@@ -85,7 +92,58 @@ function PasswordGen(check) {
 
   }
 
-  return Shuffle(pass).join("");
+  const finalpass = Shuffle(pass).join("")
+
+  if (finalpass.length > numvalue.min) {
+    strength += (finalpass.length - numvalue.min)/ 2;
+  }
+
+  if (/[A-Z]/s.test(finalpass)) {
+    strength++;
+  }
+
+  if (/[a-z]/s.test(finalpass)) {
+    strength++;
+  }
+
+  if (/[1-9]/s.test(finalpass)) {
+    strength++;
+  }
+
+  if (/[^A-Za-z0-9]/s.test(finalpass)) {
+    strength++;
+  }
+
+  if(check){
+    strength+=2;
+  }
+ 
+  const barlen = strength * 10
+  bar.style.width =  barlen + "%";
+
+  if(barlen < 40){
+    bar.style.backgroundColor = "red";
+  }
+
+  if(barlen < 70 && barlen > 40){
+    bar.style.backgroundColor = "yellow";
+  }
+
+  if(barlen > 70 && barlen < 90){
+    bar.style.backgroundColor = "DarkGreen";
+  }
+
+  if(barlen > 90 && barlen < 100){
+    bar.style.backgroundColor = "lime";
+
+  }
+
+  if(barlen == 100){
+    bar.style.backgroundColor = "Chartreuse";
+
+  }
+  
+  return finalpass;
 
 }
 
@@ -100,6 +158,10 @@ gomb.addEventListener("click", function (e) {
   } else {
     //Password is given to the form element 
     kiir.value = PasswordGen(min1.checked);
+
+
+
+
   }
 
 
