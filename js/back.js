@@ -92,13 +92,13 @@ function PasswordGen(check) {
 
   const finalpass = Shuffle(pass).join("")
 
-  Update_Strength(finalpass, check);
+  Update_Strength(finalpass, check, necessary_sets);
 
   return finalpass;
 
 }
 
-function Update_Strength(finalpass, check){
+function Update_Strength(finalpass, check, sets){
 
   var strength = 0;
   
@@ -122,7 +122,7 @@ function Update_Strength(finalpass, check){
     strength++;
   }
 
-  if(check){
+  if(check && sets.length > 1){
     strength+=2;
   }
  
