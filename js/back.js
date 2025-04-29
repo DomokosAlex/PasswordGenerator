@@ -107,25 +107,21 @@ function Update_Strength(finalpass, check, sets){
   }
 
   if (/[A-Z]/s.test(finalpass)) {
-    strength++;
+    strength+=1.5;
   }
 
   if (/[a-z]/s.test(finalpass)) {
-    strength++;
+    strength+=1.5;
   }
 
-  if (/[1-9]/s.test(finalpass)) {
-    strength++;
+  if (/[0-9]/s.test(finalpass)) {
+    strength+=1.5;
   }
 
   if (/[^A-Za-z0-9]/s.test(finalpass)) {
-    strength++;
+    strength+=1.5;
   }
 
-  if(check && sets.length > 1){
-    strength+=2;
-  }
- 
   const barlen = strength * 10
   bar.style.width =  barlen + "%";
 
